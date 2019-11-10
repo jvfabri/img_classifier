@@ -6,9 +6,12 @@
 REQUISITOS/BIBLIOTECAS NECESSÁRIAS:
 
 	Python 3
-	Tensorflow 2.x e submódulos necessários (Keras, Pandas, etc.)
-	Numpy
-	MatPlotLib
+	Tensorflow 2.x e submódulos necessários
+	Keras 2.x
+	Numpy 1.17
+	MatPlotLib 3.x
+	H5Py 2.8
+	*Módulosem versões anteriores podem funcionar.
 
 ORGANIZAÇÃO SUGERIDA PARA AS PASTAS COM AS IMAGENS:
 
