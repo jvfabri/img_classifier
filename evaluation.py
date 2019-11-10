@@ -33,16 +33,17 @@ if(len(sys.argv)>1 and ('.bmp' in sys.argv[1])):
 	img = np.expand_dims(img, axis=0) 
 	print('Sem anel' if model.predict_classes(img)==1 else 'Com anel') #shows in terminal the result of classification
 
-
+	#Slices the model until the output of the second convolutional layer in order to plot the features identified in the image classified
 	model = keras.models.Model(inputs=model.inputs, outputs=model.layers[2].output)
-
 	feature_maps = model.predict(img)
+
 	spc=0.1
 	i = 1
+	#Configures the plot of the images and saves it to "features_originalname_bmp.pdf" in the same directory of "evaluation.py"
 	plt.figure(figsize=(6,6))
-	for _ in range(4):
-		for _ in range(4):
-			ax = plt.subplot(4, 4, i)
+	for _ in range(6):
+		for _ in range(5):
+			ax = plt.subplot(6, 5, i)
 			ax.set_xticks([])
 			ax.set_yticks([])
 			plt.imshow(feature_maps[0, :, :, i-1], cmap='gray')
@@ -50,4 +51,5 @@ if(len(sys.argv)>1 and ('.bmp' in sys.argv[1])):
 	plt.subplots_adjust(wspace = spc,hspace =spc)
 	plt.savefig("features_"+sys.argv[1].replace('/','_').replace('.','_')+".pdf")
 	plt.show()
+	
 

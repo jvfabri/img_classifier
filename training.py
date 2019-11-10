@@ -8,6 +8,7 @@ from tensorflow import keras
 
 arguments=sys.argv
 
+
 #number of pixels to which each image will be reduced before the training process
 IMG_W = 200   
 IMG_H = 250
@@ -24,7 +25,7 @@ else :
 	#this step helps create more images for fitting the model if too few images have been provided for training
 train_datagen = keras.preprocessing.image.ImageDataGenerator(
 				rescale=1./255,       #rescale bitmap values from 0 - 255  to  0 - 1
-				rotation_range=20,
+				rotation_range=30,
 				width_shift_range=0.1,
 				height_shift_range=0.1,
 				zoom_range=0.3,
@@ -46,7 +47,7 @@ model = tf.keras.models.Sequential([
 	tf.keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=(IMG_W, IMG_H, 3)), 	
 	tf.keras.layers.MaxPooling2D(2, 2),			
 
-	tf.keras.layers.Conv2D(16, (3,3), activation='relu'),
+	tf.keras.layers.Conv2D(64, (3,3), activation='relu'),
 	tf.keras.layers.MaxPooling2D(2,2),
 
 	tf.keras.layers.Flatten(),
@@ -79,3 +80,5 @@ print("Elapsed time: %.10f s"%(elapsed))
 model.save(os.getcwd()+'/saved_model.h5')
 
 print("done! -- run evaluation.py to evaluate the model or classify new images")
+os.system("echo -n '\a';sleep 0.2;"*2)
+
