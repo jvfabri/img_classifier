@@ -80,5 +80,4 @@ print("Elapsed time: %.10f s"%(elapsed))
 model.save(os.getcwd()+'/saved_model.h5')
 
 print("done! -- run evaluation.py to evaluate the model or classify new images")
-os.system("echo -n '\a';sleep 0.2;"*2)
 
