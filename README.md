@@ -1,14 +1,17 @@
  - Identificação da Presença de Aneis em Imagens de Blocos de Motor 
+	
 	Autor: João Victor Fabri
 	e-mail: joaovictor.fabri@gmail.com
 
 REQUISITOS/BIBLIOTECAS NECESSÁRIAS:
+
 	Python 3
 	Tensorflow 2.x e submódulos necessários
 	Numpy
 	MatPlotLib
 
 ORGANIZAÇÃO SUGERIDA PARA AS PASTAS COM AS IMAGENS:
+
 	root:
 	|-training.py
 	|-evaluation.py
@@ -33,6 +36,7 @@ ORGANIZAÇÃO SUGERIDA PARA AS PASTAS COM AS IMAGENS:
 	***opcional
 
 CORTA CAMINHO:
+
 	>>python3 training.py train 
 	--- aguarde resultado do treinamento
 
@@ -44,6 +48,7 @@ CORTA CAMINHO:
 	
 
 COMO EXECUTAR:
+
 - Organize os dados de treinamento e validação em subpastas de acordo com sua classificação ("Sem anel" ou "Com anel").
 
 - Treinamento da rede:
@@ -77,6 +82,7 @@ COMO EXECUTAR:
 		Ao fim do treinamento, um arquivo é gerado ("saved_model.h5"), que será utilizado pelo script de avaliação do modelo.
 
 - Avaliação da rede:
+
 	 	Execute o script "evaluation.py" a partir de uma pasta superior aos dados de avaliação a partir do comando:
 	
 	>> python3 evaluation.py arg1 arg2
